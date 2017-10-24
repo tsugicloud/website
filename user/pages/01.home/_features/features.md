@@ -1,6 +1,6 @@
 ---
 title: 'Our Capabilities'
-image: img-about.png
+published: false
 features:
     -
         title: 'We teach you how to improve your business'
@@ -14,5 +14,6 @@ features:
         title: 'Seamlessly grow wireless human capital before turnkey'
         icon: fa-calculator
         description: 'Lorem ipsum dolor sit consectetuer adipiscing elit nonummy ib uismod tincidunt ut laoreet<br>dolore magna aliquam erat volutpat.'
+image: img-about.png
 ---
 

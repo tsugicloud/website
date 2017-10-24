@@ -1,25 +1,22 @@
 ---
-title: Our Professional Skills
+title: 'Our Professional Skills'
+published: false
 skills:
     -
         name: Solution
-        percentage: 50
-
+        percentage: '50'
     -
         name: Creativity
-        percentage: 90
-
+        percentage: '90'
     -
         name: Finance
-        percentage: 75
-
+        percentage: '75'
     -
         name: Brand
-        percentage: 33
-
+        percentage: '33'
     -
         name: Efficiency
-        percentage: 82
+        percentage: '82'
 ---
 
 ### Completely reconceptualize leading-edge e-commerce

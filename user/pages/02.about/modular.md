@@ -10,6 +10,7 @@ content:
             - _skills
             - _testimonials
             - _clients
+published: false
 taxonomy:
     category:
         - site

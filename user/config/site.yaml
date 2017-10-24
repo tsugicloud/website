@@ -1,7 +1,8 @@
-title: 'X-Corporation'
+title: TsugiCloud
+default_lang: en
 author:
-  name: 'Joe Bloggs'
-  email: joe@test.com
+  name: 'Charles R. Severance'
+  email: drchuck@gmail.com
 taxonomies:
   - category
   - tag

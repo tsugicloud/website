@@ -2,28 +2,17 @@ enabled: true
 logo: logo.png
 footer_icons:
   -
-    icon: fa-facebook
-    url: 'https://www.facebook.com/'
-  -
     icon: 'fa fa-twitter'
-    url: 'https://www.twitter.com/'
-  -
-    icon: fa-google-plus
-    url: 'https://www.google.com/'
-  -
-    icon: fa-dribbble
-    url: 'https://www.dribbble.com/'
+    url: 'https://www.twitter.com/drchuck'
 footer_blocks:
   -
-    content: 'Continually matrix cross functional opportunities whereas ethical information. Compellingly streamline enabled human capital before resource-leveling internal or "organic".'
-    icons: false
-  -
-    title: 'We work for your profit'
-    content: 'Distinctively expedite viral materials rather than out-of-the-box solutions. Credibly empower revolutionary ROI rather than unique products. Collaboratively maximize principle-centered ideas before highly efficient data. Phosfluorescently.'
+    title: 'Open Hosting / Open Source'
+    content: 'This server provides community-supported hosting of open source <a href="https://www.tsugi.org" target="_blank">Tsugi</a> educational tools available in the <a href="https://github.com/tsugitools" target="_blank">Tsugi Tools Project</a>.'
     logo: false
     icons: false
   -
-    title: 'Contact Us Today'
-    content: "Call Us 666 777 888 OR 111 222 333\r\n\r\nSend an Email on <a href=\"mailto:#\">contact@domain.com</a>\r\n\r\nVisit Us 123 Fake Street- Blla 12358\r\nFake Kingdom"
+    title: 'Support Open Source'
+    content: 'This service is provided to help support and grow the Tsugi community.  You can help support this effort by becoming involved in the <a href="https://www.apereo.org" target="_blank">Apereo</a> community.'
     logo: false
+    icons: false
 google_maps_api_key: AIzaSyDbmnZP5BTkpv5blTprRtUvS99zbvyoSAQ

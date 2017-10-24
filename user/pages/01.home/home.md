@@ -1,5 +1,5 @@
 ---
-title: X-Corporation
+title: 'TsugiCloud 次'
 menu: Home
 shown_in_footer: true
 content:

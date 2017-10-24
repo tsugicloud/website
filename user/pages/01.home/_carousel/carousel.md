@@ -2,19 +2,34 @@
 title: Carousel
 slides:
     -
-        heading: 'It''s simple, smart and often magical.'
-        description: 'Intrinsicly negotiate corporate synergy rather than user-centric web services. Synergistically<br>transition emerging schemas and.'
+        heading: 'An App Store for Education'
+        description: 'The tools hosted on this site can be seamlessly integrated into any Learning Management System that supports IMS Learning Tools Interoperability.'
         background_image: hero-slide-1.jpg
-        background_image_description: 'It''s simple, smart and occasionally magical.'
+        background_image_description: 'Responsible Hosting for Open Source Tsugi tools'
     -
-        heading: 'It''s profitable and successful!'
-        description: 'Synergistically enhance low-risk high-yield testing procedures with clicks-and-mortar architectures.<br>Compellingly revolutionize future-proof interfaces and.'
+        heading: 'Hosting for learning tools'
+        description: 'TsugiCloud provides socially responsible free hosting of open source Tsugi tools that are developed as part of the Tsugi project.'
         background_image: hero-slide-2.jpg
-        background_image_description: 'It''s profitable and successful!'
+        background_image_description: 'Hosting for  learning tools'
     -
-        heading: 'Good solutions for your business!'
-        description: 'Monotonectally envisioneer 24/7 bandwidth with reliable imperatives. Continually unleash unique<br>niches after go forward.'
+        heading: 'Teachers and Learners'
+        description: 'Teachers and Learners have access to a wide range of tools to improve the overall user experience in their courses.'
         background_image: hero-slide-3.jpg
-        background_image_description: 'Good solutions for your business!'
+        background_image_description: 'Teachers and Learners'
+    -
+        heading: Developers
+        description: 'Developers can build open source Tsugi tools as part of the Apereo Project and submit them to be hosted on this service.'
+        background_image: hero-slide-1.jpg
+        background_image_description: Developers
+    -
+        heading: 'IT Staff'
+        description: 'The tools on this server can be integrated as an App Store into an LMS that supports the IMS Content Item Message standard.  Also, Tsugi and the Tsugi Tools project are all 100% open source so a school has the option to host their own independent instance of a Tsugi App Store.'
+        background_image: hero-slide-2.jpg
+        background_image_description: 'IT Staff'
+    -
+        heading: 'Commercial Hosting for Tsugi'
+        description: 'There are companies working to provide commercial, scalable, and cloud based hosting for Tsugi.  (Coming Soon)'
+        background_image: hero-slide-3.jpg
+        background_image_description: 'Commercial Hosting for Tsugi'
 ---
 

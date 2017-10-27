@@ -2,6 +2,7 @@
 .sass-cache
 composer.lock
 tsugi/*
+mod/*
 cache/*
 assets/*
 logs/*

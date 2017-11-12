@@ -48,11 +48,11 @@ We do no third-party advertising on this site.
 
 We use Google analytics to track usage and improve the site.
 
-Google, as a third-party vendor, uses cookies to support analytics on our site. Google's use of the DART cookie. Users may opt-out of the use of the DART cookie by using the Google-provided opt-out capabilities. If users opt-out of Google Analytics on this site, there is no reduction in functionality of this site.
+Google, as a third-party vendor, uses cookies to support analytics on our site. Users may opt-out of the use of the DART cookie by using the Google-provided opt-out capabilities. If users opt-out of Google Analytics on this site, there is no reduction in functionality of this site.
 
 **How does our site handle Do Not Track signals?**
 
-We honor Do Not Track signals and Do Not Track, plant cookies, or use advertising when a Do Not Track (DNT) browser mechanism is in place.
+We honor Do Not Track signals.  When DNT is indicated, we supress the gathering of all internal analytics data and do not use any third part analytics on the pages the user visits.  We never show ads.
 
 **COPPA (Children Online Privacy Protection Act)**
 

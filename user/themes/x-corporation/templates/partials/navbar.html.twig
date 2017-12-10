@@ -45,7 +45,7 @@
             </button>
             {% if theme_config.logo != '' %}
             <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
-                <img src="{{ url('theme://img/' ~ theme_config.logo) }}" alt="">
+                <img width="180" src="{{ url('theme://img/' ~ theme_config.logo) }}" alt="">
             </a>
             {% endif %}
         </div>

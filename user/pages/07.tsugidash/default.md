@@ -1,5 +1,5 @@
 ---
-title: 'Tsugi Dashboard'
+title: 'App Store'
 ---
 
 <center>

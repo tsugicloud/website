@@ -23,7 +23,7 @@ slides:
         background_image_description: Developers
     -
         heading: 'IT Staff'
-        description: 'The tools on this server can be integrated as an App Store into an LMS that supports the IMS Content Item Message standard.  Also, Tsugi and the Tsugi Tools project are all 100% open source so a school has the option to host their own independent instance of a Tsugi App Store.'
+        description: 'The tools on this server can be integrated as an App Store into an LMS that supports the IMS Content Item Message standard or Google Classroom.  Also, Tsugi and the Tsugi Tools project are all 100% open source so a school has the option to host their own independent instance of a Tsugi App Store.'
         background_image: hero-slide-2.jpg
         background_image_description: 'IT Staff'
     -

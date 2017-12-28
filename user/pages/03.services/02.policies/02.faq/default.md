@@ -12,6 +12,10 @@ If you use Google Classroom, go into the App Store and connect your Classrooms t
 
 Yes, most LMS's like Sakai, Canvas, Blackboard, Moodle, or Brightspace allow an administrator to install an LTI tool for all users.  If your LMS supports IMS Content Item (a.k.a. IMS Deep Linking) it is possible to install *the app store* into your LMS once and users can convienently select items from this store and install them using the system-wide key and secret.  Look for the "System-wide URLs" in the App Store or in the "Using Your Key" area under Settings.
 
+**Can I test these tools with 12345/secret**
+
+Yes you can.  You should *never* use this key and secret in production. All trhe data associated with 12345/secret is thrown away periodically.  Using a commonly known test key/secret exposes any data stored under that key.  So 12345/secret is *perfect* for testing but very bad for production.
+
 **Can I pay for TsugiCloud?**
 
 No.  This is and will continue to be a free service.  If you want to support the effort, please join and/or donate to <a href="https://www.apereo.org" target="_blank">Apereo</a> and support the Tsugi project.   In time there will be Tsugi Commercial Affiliates that will provide an expanded version of this type of service commercially.

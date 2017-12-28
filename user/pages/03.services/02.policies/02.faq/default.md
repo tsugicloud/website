@@ -14,7 +14,7 @@ Yes, most LMS's like Sakai, Canvas, Blackboard, Moodle, or Brightspace allow an 
 
 **Can I test these tools with 12345/secret**
 
-Yes you can.  You should *never* use this key and secret in production. All trhe data associated with 12345/secret is thrown away periodically.  Using a commonly known test key/secret exposes any data stored under that key.  So 12345/secret is *perfect* for testing but very bad for production.
+Yes you can.  You should *never* use this key and secret in production. All the data associated with 12345/secret is thrown away periodically.  Using a commonly known test key/secret exposes any data stored under that key.  So 12345/secret is *perfect* for testing but very bad for production.
 
 **Can I pay for TsugiCloud?**
 

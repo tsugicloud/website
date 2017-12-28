@@ -2,7 +2,7 @@
 title: FAQ
 ---
 
-**How would a teacher use TsugCLoud?**
+**How would a teacher use TsugCloud?**
 
 Most Learning Management Systems (LMS) support the IMS Learning Tools Interoperabiltiy&reg; (LTI) specification.   To integrate a tool, you need to apply for a key and secret in the App Store.  When you receive your secret, you can visit the app store and get the launch URL to plug the tool into your LMS.
 

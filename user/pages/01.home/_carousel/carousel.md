@@ -28,7 +28,7 @@ slides:
         background_image_description: 'IT Staff'
     -
         heading: 'Commercial Hosting for Tsugi'
-        description: 'There are companies working to provide commercial, scalable, and cloud based hosting for Tsugi.  (Coming Soon)'
+        description: 'There are companies working to provide commercial, scalable, and cloud based hosting for Tsugi.'
         background_image: hero-slide-3.jpg
         background_image_description: 'Commercial Hosting for Tsugi'
 ---

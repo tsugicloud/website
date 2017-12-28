@@ -4,7 +4,7 @@ title: FAQ
 
 **How would a teacher use TsugCloud?**
 
-Most Learning Management Systems (LMS) support the IMS Learning Tools Interoperabiltiy&reg; (LTI) specification.   To integrate a tool, you need to apply for a key and secret in the App Store.  When you receive your secret, you can visit the app store and get the launch URL to plug the tool into your LMS.
+Most Learning Management Systems (LMS) support the IMS Learning Tools Interoperability&reg; (LTI) specification.   To integrate a tool, you need to apply for a key and secret in the App Store.  When you receive your secret, you can visit the app store and get the launch URL to plug the tool into your LMS.
 
 If you use Google Classroom, go into the App Store and connect your Classrooms to this store.  At that point, you can immediately install Apps into Google Classroom.  Google Classroom will be able to launch the apps and the apps will be able to send grades to Google Classroom for your students.
 

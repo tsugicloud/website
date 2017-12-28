@@ -3,7 +3,7 @@ title: Carousel
 slides:
     -
         heading: 'An App Store for Education'
-        description: 'The tools hosted on this site can be seamlessly integrated into any Learning Management System that supports IMS Learning Tools Interoperability.'
+        description: 'The tools hosted on this site can be seamlessly integrated into Google Classroom or any Learning Management System that supports IMS Learning Tools Interoperability.'
         background_image: hero-slide-1.jpg
         background_image_description: 'Responsible Hosting for Open Source Tsugi tools'
     -

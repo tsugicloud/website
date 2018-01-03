@@ -184,6 +184,13 @@ button:focus,
     padding-bottom : 100px;
     }
 
+@media print {
+.ptb-100 {
+    padding-top    : 2rem !important;
+    padding-bottom : 2rem !important100px;
+    }
+}
+
 .ptb-150 {
     padding-top    : 150px;
     padding-bottom : 150px;
@@ -1048,6 +1055,12 @@ Team
     position: relative;
     }
 
+@media print {
+    .single-page-title {
+    padding               : 5rem 0 5rem !important;
+    }
+}
+
 .single-page-title::before{
     position: absolute;
     content: "";
@@ -1119,6 +1132,16 @@ Team
   and (orientation: portrait) {
     .single-page-title h2 {
         font-size: 40px;
+    }
+
+    .single-page-title {
+        padding-top: 20%;
+    }
+}
+
+@media print {
+    .single-page-title h2 {
+        font-size: 3rem;
     }
 
     .single-page-title {

@@ -18,4 +18,8 @@ It is relatively simple to use TsugiCloud in Google Classroom.
 
 6. Once the tools is installed and configured, students can launch the tool. If the tool produces grades they will be sent back to the Classroom grade book.  Note that you need a student account to test grades going back to Classroom.  Grades do not flow for Instructors.
 
+If you want to experiment with this, you need two @gmail.com accounts - one to be the teacher and one to be the student.  Simply go to classroom.google.com and create a course on the teacher account and invite your other gmail account to the course.  You can install tools on the teacher account and get graded from the student account.
+
+You may or may not be able to use Classroom from an "enterprise" Google account.  Your GSuite adminstrator must explicitly allow a domain to use Google Classroom. 
+
 

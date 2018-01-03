@@ -6,9 +6,9 @@ title: Canvas Integration
 
 There are several different use cases for using TsugiCloud in Canvas.  In all cases you will need a Key and Secret.
 
-1. Go to the [App Store](../../../../tsugi/login?target=_blank) and login with your Google Account
+1. Go to the App Store and login with your Google Account
 
-2. Go to the [Settings](../../../../tsugi/settings?target=_blank) and select "Manage LMS Access Keys".  Request an LTI 1.x key and wait for the email approving the key and giving your key and secret.  Keep these safe.
+2. Go to the Settings and select "Manage LMS Access Keys".  Request an LTI 1.x key and wait for the email approving the key and giving your key and secret.  Keep these safe.
 
 You can either install tools into Canvas one at a time, or install the entire TsugiCloud app store into Canvas in a single step.  Depending on your local configuration, you may or may not need to get your Canvas adminstrator to install these tools.
 
@@ -16,7 +16,7 @@ If you are a Canvas administrator, you can install either a single tool or the e
 
 **Using a Single Tool in Canvas**
 
-1. Go to the [Tsugi App Store](../../../../tsugi/store).  Find the application you want to install and go to the Details page.  If you click on "Tool URLs" you will be given a Canvas configuration URL (ends with ".xml").  Copy the URL that looks as follows:
+1. Go to the Tsugi App Store.  Find the application you want to install and go to the Details page.  If you click on "Tool URLs" you will be given a Canvas configuration URL (ends with ".xml").  Copy the URL that looks as follows:
 
     https://www.tsugicloud.org/mod/map/canvas-config.xml
 
@@ -26,7 +26,7 @@ If you are a Canvas administrator, you can install either a single tool or the e
 
 You can install TsugiCloud as a searchable "Store" inside of Canvas with a single key and secret and then you can easily pull in any of the tools at various points in the Canvas UI.
 
-1. Go to your [Tsugi Settings](../../../../tsugi/settings) and select "Manage LMS Keys" and then "Using Your Key" and then "Canvas".  You should copy the URL that looks like:
+1. Go to your Tsugi Settings and select "Manage LMS Keys" and then "Using Your Key" and then "Canvas".  You should copy the URL that looks like:
 
     https://www.tsugicloud.org/tsugi/lti/store/canvas-config.xml
 

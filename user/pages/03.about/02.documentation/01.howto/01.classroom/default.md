@@ -6,11 +6,11 @@ title: Google Classroom
 
 It is relatively simple to use TsugiCloud in Google Classroom.
 
-1. Go to the [App Store](../../../../tsugi/login?target=_blank) and login with your Google Account
+1. Go to the App Store and login with your Google Account
 
-2. Connect your Google account on TsugiCloud to [your Google Classroom](../../../../tsugi/gclass/login?target="_blank")
+2. From Settings, connect your Google account on TsugiCloud to your Google Classroom
 
-3. Then go to the [Tsugi App Store](../../../../tsugi/store) - at that point, if you have successfully connected to one or more Google Classrooms, you should see the Google Classroom icon next to each of the applications in the store.  
+3. Then go to the Tsugi App Store - at that point, if you have successfully connected to one or more Google Classrooms, you should see the Google Classroom icon next to each of the applications in the store.  
 
 4. When you click on the Google Classroom icon <img src="https://www.gstatic.com/classroom/logo_square_48.svg" style="height: 2rem;"> you will be prompted for a Google Classroom course to install the tool.
 

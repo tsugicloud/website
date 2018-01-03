@@ -22,7 +22,7 @@ No.  This is and will continue to be a free service.  If you want to support the
 
 **Can I build my own educational tool like these tools?**
 
-These tools are all built using a freem and 100% open source framework called <a href="https://www.tsugi.org/" target="_blank">Tsugi</a>.  The Tsugi web site has details on how to get started developing educational tools using Tsugi.
+These tools are all built using a free and 100% open source framework called <a href="https://www.tsugi.org/" target="_blank">Tsugi</a>.  The Tsugi web site has details on how to get started developing educational tools using Tsugi.
 
 **How do I submit a tool I have written to host it on TsugiCloud?**
 

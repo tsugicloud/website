@@ -1,5 +1,8 @@
 ---
 title: Contact
+menu: Contact
+cache_enable: false
+template: yada
 content:
     items: '@self.modular'
     order:
@@ -8,9 +11,6 @@ content:
         custom:
             - _contact
             - _map
-menu: Contact
-cache_enable: false
-template: yada
 shown_in_footer: true
 background_image: img-page-title.jpg
 form:

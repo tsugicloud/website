@@ -31,5 +31,10 @@ slides:
         description: 'There are companies working to provide commercial, scalable, and cloud based hosting for Tsugi.'
         background_image: hero-slide-3.jpg
         background_image_description: 'Commercial Hosting for Tsugi'
+    -
+        heading: 'Beta Testing'
+        description: 'This site is in production and ready to use. Please contact us if you encounter any issues or have any questions.'
+        background_image: hero-slide-1.jpg
+        background_image_description: 'Beta Testing TsugiCloud'
 ---
 

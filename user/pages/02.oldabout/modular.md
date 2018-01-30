@@ -1,5 +1,5 @@
 ---
-title: 'About Us'
+title: 'Documentation'
 content:
     items: '@self.modular'
     order:

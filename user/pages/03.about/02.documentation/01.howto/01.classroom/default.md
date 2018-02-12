@@ -22,4 +22,6 @@ If you want to experiment with this, you need two @gmail.com accounts - one to b
 
 You may or may not be able to use Classroom from an "enterprise" Google account.  Your GSuite adminstrator must explicitly allow a domain to use Google Classroom. 
 
+<a href="https://www.youtube.com/watch?v=SeAsoA_fJo0" target="_blank">Video Demonstration</a>
+
 

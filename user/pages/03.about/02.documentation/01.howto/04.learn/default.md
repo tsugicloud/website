@@ -28,13 +28,15 @@ If you are a Learn administrator, you can install either a single tool or the en
 
 Learn Release 3300 and later supports the IMS Content Item standard so you can install this site as an "App Store" / "Learning Object Repository" using this url and your key and secret:
 
-    https://www.tsugicloud.org/tsugi/lti/store/
+https://www.tsugicloud.org/tsugi/lti/store/
 
-In the Administrator panel, go to "Building Blocks" and select "LTI Tool Providers" and then "Register Provider Domain".  There are a number of options including whether to use one share key and secret or have each instructor enter their own key or secret.  They also set what user data (Name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.
+1. In the Administrator panel, go to "Building Blocks" and select "LTI Tool Providers" and then "Register Provider Domain".  There are a number of options including whether to use one share key and secret or have each instructor enter their own key or secret.  They also set what user data (Name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.
 
-Still as the Administrator, Once the item has been created, open the the drop down by the domain name in the "LTI Tool Provider" and select "Manage Placements".  Then select "Create Placement".  Enter a title, the URL, key and secret and fill in the fields and in particular check the box that says "Content-Item Message". And save the placement.
+2. Still as the Administrator, Once the item has been created, open the the drop down by the domain name in the "LTI Tool Provider" and select "Manage Placements".  Then select "Create Placement".  Enter a title, the URL, key and secret and fill in the fields and in particular check the box that says "Content-Item Message". And save the placement.
 
-Then as the instructor, when you go to Content -> Build Content, you will see the newly installed placement as one of the selectable items with whatever title you gave the placement.  Select the "App Store" (placement title) link, you will be launched directly into the Tsugi store selector, select your tool, and press "Install" and the LTI will be installed into the content ares of your course.  No further configuration is necessary.
+3. Then as the instructor, when you go to Content -> Build Content, you will see the newly installed placement as one of the selectable items with whatever title you gave the placement.  Select the "App Store" (placement title) link, you will be launched directly into the Tsugi store selector, select your tool, and press "Install" and the LTI will be installed into the content ares of your course.  No further configuration is necessary.
 
-<a href="https://www.youtube.com/watch?v=au2_C_2PgIA" target="_blank">Video Demonstration</a>
+The "App Store" / "Content Item" / "Deep Linking" features are an extension to LTI 1.1.   They do not require LTI 2.0.   Learn supports LTI 2.0 and so does TsugiCloud, but ContentItem is generally preferred over LTI 2.0.
+
+<!-- <a href="https://www.youtube.com/watch?v=au2_C_2PgIA" target="_blank">Video Demonstration</a> -->
 

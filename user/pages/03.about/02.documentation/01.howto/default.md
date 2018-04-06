@@ -10,3 +10,4 @@ These documents show how to use thie site.  If you would like additional documen
 
 * [Using TsugiCloud in Sakai](sakai) (<a href="https://www.youtube.com/watch?v=au2_C_2PgIA" target="_blank">video</a>)
 
+* [Using TsugiCloud in Blackboard](learn) 

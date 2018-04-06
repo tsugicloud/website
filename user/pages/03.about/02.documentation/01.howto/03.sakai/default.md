@@ -20,7 +20,7 @@ If you are a Sakai administrator, you can install either a single tool or the en
 
     https://www.tsugicloud.org/mod/map/
 
-2. Sakai supports several ways of installing external tools.  You can either go to Lessons / External Tools or Site Info / External tools and add an LTI 1.x tool.  Enter they key, secret, and launch URL and fill in the rest of the fields.
+2. Sakai supports several ways of installing external tools.  You can either go to Lessons / External Tools or Site Info / External tools and add an LTI 1.x tool.  Enter the key, secret, and launch URL and fill in the rest of the fields.
 
 
 **Installing TsugiCloud as an App Store in Sakai**

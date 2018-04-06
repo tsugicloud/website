@@ -1,5 +1,5 @@
 ---
-title: Blackboard Learn Integration
+title: Blackboard Learn
 ---
 
 **Using TsugiCloud in Blackboard Learn**

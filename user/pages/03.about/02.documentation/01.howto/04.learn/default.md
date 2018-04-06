@@ -20,7 +20,7 @@ If you are a Learn administrator, you can install either a single tool or the en
 
     https://www.tsugicloud.org/mod/map/
 
-2. Learn requires that an adminstrator set up the use of LTI for a particular domain.   To do this, log in as an Administrator, go to "Building Blocks" and select "LTI Tool Providers" and then "Register Provider Domain".  There are a number of options including whether to use one share key and secret or have each instructor enter their own key or secret.  They also set what user data (Name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.
+2. Learn requires that an adminstrator set up the use of LTI for a particular domain.   To do this, log in as an Administrator, go to "Building Blocks" and select "LTI Tool Providers" and then "Register Provider Domain".  There are a number of options including whether to use one share key and secret or have each instructor enter their own key or secret.  They also set what user data (name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.
 
 3. Once things are set up, the simplest way for an instructor to install an LTI tool in Learn is to go to Content -> Build Content -> Web Link.  Give your link a name and a URL and check the box "This link is to a Tool Provider".  If Learn displays a message like, "This tool provider is not supported.  Only standard URL links to this site are permitted.", you will need to talk to your administrator to get the tsugicloud.org domain installed in Learn (see previous step).   Depending on the configuration of the domain, you may or may not need to enter a key and secret in the link.
 

@@ -38,5 +38,5 @@ https://www.tsugicloud.org/tsugi/lti/store/
 
 The "App Store" / "Content Item" / "Deep Linking" features are an extension to LTI 1.1.   They do not require LTI 2.0.   Learn supports LTI 2.0 and so does TsugiCloud, but ContentItem is generally preferred over LTI 2.0.
 
-<!-- <a href="https://www.youtube.com/watch?v=au2_C_2PgIA" target="_blank">Video Demonstration</a> -->
+<a href="tps://www.youtube.com/watch?v=8uNWT32ITxw" target="_blank">Video Demonstration</a>
 

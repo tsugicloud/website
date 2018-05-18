@@ -7,7 +7,7 @@ slides:
         background_image: hero-slide-1.jpg
         background_image_description: 'Responsible Hosting for Open Source Tsugi tools'
     -
-        heading: 'Hosting for learning tools'
+        heading: 'Free Hosting'
         description: 'TsugiCloud provides socially responsible free hosting of open source Tsugi tools that are developed as part of the Tsugi project.'
         background_image: hero-slide-2.jpg
         background_image_description: 'Hosting for  learning tools'
@@ -31,10 +31,5 @@ slides:
         description: 'You can purchase commercial hosting for Tsugi from Learning Experiences.'
         background_image: hero-slide-3.jpg
         background_image_description: 'Commercial Hosting for Tsugi'
-    -
-        heading: 'Beta Testing'
-        description: 'This site is in production and ready to use. Please contact us if you encounter any issues or have any questions.'
-        background_image: hero-slide-1.jpg
-        background_image_description: 'Beta Testing TsugiCloud'
 ---
 

@@ -18,7 +18,7 @@ Yes you can.  You should *never* use this key and secret in production. All the 
 
 **Can I pay for TsugiCloud?**
 
-No.  This is and will continue to be a free service.  If you want to support the effort, please join and/or donate to <a href="https://www.apereo.org" target="_blank">Apereo</a> and support the Tsugi project.   In time there will be Tsugi Commercial Affiliates that will provide an expanded version of this type of service commercially.
+No.  This is and will continue to be a free service.  If you want to support the effort, please join and/or donate to <a href="https://www.apereo.org" target="_blank">Apereo</a> and support the Tsugi project. You can purchase hosting for Tsugi tools from <a href="https://www.learnxp.com/" target="_blank">Learning Experiences</a>.  Learning Experiences is a <a href="https://www.apereo.org/content/commercial-affiliates" target="_blank">Tsugi Commercial Affialiate</a>.
 
 **Can I build my own educational tool like these tools?**
 

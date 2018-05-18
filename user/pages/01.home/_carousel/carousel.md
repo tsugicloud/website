@@ -28,7 +28,7 @@ slides:
         background_image_description: 'IT Staff'
     -
         heading: 'Commercial Hosting for Tsugi'
-        description: 'You can purchase commercial hosting for Tsugi from Learning Experiences.'
+        description: 'Learning Experiences provides the resources this site is free to use. You can purchase commercial hosting for Tsugi from Learning Experiences.'
         background_image: hero-slide-3.jpg
         background_image_description: 'Commercial Hosting for Tsugi'
 ---

@@ -30,7 +30,7 @@ Learn Release 3300 and later supports the IMS Content Item standard so you can i
 
 https://www.tsugicloud.org/tsugi/lti/store/
 
-1. In the Administrator panel, make sure that LTI is enabled.  go to "Administrator Panel" and select "Tools".  Make sure that under "LTI" you enable "Course tool", "Orbganization Tool", and "Content Type" as apporpriate.
+1. In the Administrator panel, make sure that LTI is enabled.  go to "Administrator Panel" and select "Tools".  Make sure that under "LTI" you enable "Course Tool", "Orbganization Tool", and "Content Type" as apporpriate.
 
 
 2. In the Administrator panel, go to "Administrator Panel" and select "LTI Tool Providers" and then "Register Provider Domain".  Register the domain "www.tsugicloud.org".  There are a number of options including whether to use one shared key and secret or have each instructor enter their own key or secret.  They also set what user data (Name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.

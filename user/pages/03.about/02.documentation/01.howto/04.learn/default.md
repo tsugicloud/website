@@ -20,7 +20,7 @@ If you are a Learn administrator, you can install either a single tool or the en
 
     https://www.tsugicloud.org/mod/map/
 
-2. Learn requires that an adminstrator set up the use of LTI for a particular domain.   To do this, log in as an Administrator, go to "Building Blocks" and select "LTI Tool Providers" and then "Register Provider Domain".  There are a number of options including whether to use one share key and secret or have each instructor enter their own key or secret.  They also set what user data (name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.
+2. Learn requires that an adminstrator set up the use of LTI for a particular domain.   To do this, log in as an Administrator, go to "Administrator Panel" and select "LTI Tool Providers" and then "Register Provider Domain".  There are a number of options including whether to use one shared key and secret or have each instructor enter their own key or secret.  They also set what user data (name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.
 
 3. Once things are set up, the simplest way for an instructor to install an LTI tool in Learn is to go to Content -> Build Content -> Web Link.  Give your link a name and a URL and check the box "This link is to a Tool Provider".  If Learn displays a message like, "This tool provider is not supported.  Only standard URL links to this site are permitted.", you will need to talk to your administrator to get the tsugicloud.org domain installed in Learn (see previous step).   Depending on the configuration of the domain, you may or may not need to enter a key and secret in the link.
 
@@ -30,9 +30,9 @@ Learn Release 3300 and later supports the IMS Content Item standard so you can i
 
 https://www.tsugicloud.org/tsugi/lti/store/
 
-1. In the Administrator panel, go to "Building Blocks" and select "LTI Tool Providers" and then "Register Provider Domain".  There are a number of options including whether to use one share key and secret or have each instructor enter their own key or secret.  They also set what user data (Name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.
+1. In the Administrator panel, go to "Administrator Panel" and select "LTI Tool Providers" and then "Register Provider Domain".  Register the domain "www.tsugicloud.org".  There are a number of options including whether to use one shared key and secret or have each instructor enter their own key or secret.  They also set what user data (Name / email / role) is shared with the tool as well as deciding whether the tool will be allowed to use the membership service.
 
-2. Still as the Administrator, Once the item has been created, open the the drop down by the domain name in the "LTI Tool Provider" and select "Manage Placements".  Then select "Create Placement".  Enter a title, the URL, key and secret and fill in the fields and in particular check the box that says "Content-Item Message". And save the placement.
+2. Still as the Administrator, Once the item has been created, open the the drop down by the domain name in the "LTI Tool Provider" and select "Manage Placements".  Then select "Create Placement".  Enter a title, the store URL above, key and secret and fill in the fields and in particular check the box that says "Supports deep linking" and "Allows grading". And save the placement.
 
 3. Then as the instructor, when you go to Content -> Build Content, you will see the newly installed placement as one of the selectable items with whatever title you gave the placement.  Select the "App Store" (placement title) link, you will be launched directly into the Tsugi store selector, select your tool, and press "Install" and the LTI will be installed into the content ares of your course.  No further configuration is necessary.
 

@@ -2,6 +2,10 @@
 title: Canvas Integration
 ---
 
+You can view, install, and use TsugiCloud in the EduAppCenter at:
+
+    https://www.eduappcenter.com/apps/1010
+
 **Using TsugiCloud in Canvas**
 
 There are several different use cases for using TsugiCloud in Canvas.  In all cases you will need a Key and Secret.

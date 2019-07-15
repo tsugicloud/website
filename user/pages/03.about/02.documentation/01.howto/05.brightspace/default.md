@@ -4,7 +4,7 @@ title: Brightspace
 
 **Using TsugiCloud in Brightspace**
 
-1. Go to the App Store and login with your Google Account
+1. Go to the TsugiCloud App Store and login with your Google Account
 
 2. Go to the Settings and select "Manage LMS Access Keys".  Request an LTI 1.x key and wait for the email approving the key and giving your key and secret.  Keep these safe.
 

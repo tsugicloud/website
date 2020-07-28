@@ -58,6 +58,22 @@ We honor Do Not Track signals.  When DNT is indicated, we supress the gathering 
 
 We do not specifically market to children under the age of 13 years old.
 
+**Data Retention**
+
+We actively expire inactive data based on a schedule. When data expires or is manually removed, this service does not retain a copy of the data. By only keeping active data in the system, we reduce the overall amount of 'Personally Identifiable Information' (PII) on the system at any time.
+
+**Data Analysis**
+
+We will limit our analysis of PII data to reports requested by the customer or reports that are necessary for accounting, technical support, and overall statistics for the system. We may do internal data analysis to improve the technical reliability, functionality, or performance of the system. In particular we will not use Machine Learning, or Artificial Intelligence techniques to understand the behavior of those using our site.
+
+**General Philosphy**
+
+It is often said that if you are not paying for a service, then you are the product. For this service, you are not the product and your data/activity is not the product. We retain only as much of your data as is needed to accomplish your teaching and learning goals and for no other purpose. Wherever possible, we give you direct control over the retention of your data and respect your wishes with respect to the retention of your data.
+
+Our goal is to comply both with the letter and spirit or privacy laws like the The Family Educational Rights and Privacy Act (FERPA) and EU General Data Protection Regulation (GDPR) regulations. We aspire to a company that far exceeds the minimum requirements of these laws.
+
+Much of the software used in this company is open source so you can examine/audit what we are doing with respect to privacy and potentially help us improve our approaches to this very important topic.
+
 **Notifications** 
 
 In order to be in line with Fair Information Practices we will take the following responsive action, should a data breach occur: We will notify you via email

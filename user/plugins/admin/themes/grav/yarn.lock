@@ -1090,9 +1090,9 @@ code-point-at@^1.0.0:
   dependencies:
     number-is-nan "^1.0.0"
 
-codemirror@^5.30.0:
-  version "5.30.0"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.30.0.tgz#86e57dd5ea5535acbcf9c720797b4cefe05b5a70"
+codemirror@^5.58.2:
+  version "5.58.2"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.58.2.tgz#ed54a1796de1498688bea1cdd4e9eeb187565d1b"
 
 color-convert@^1.0.0:
   version "1.9.0"

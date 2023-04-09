@@ -1,56 +1,77 @@
 <?php
-/**
- * @package    Grav.Core
- *
- * @copyright  Copyright (C) 2014 - 2017 RocketTheme, LLC. All rights reserved.
- * @license    MIT License; see LICENSE file for details.
- */
+require_once 'master.php';
+master :: head();
+master :: navbar();
+?>
+<html>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/ArtAndFeminism_MoMA18_-_30_-_Editing_with_Megan_Wacha.jpg/1024px-ArtAndFeminism_MoMA18_-_30_-_Editing_with_Megan_Wacha.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/200131-D-RQ659-0001.JPG/1024px-200131-D-RQ659-0001.JPG" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Junction_2015.jpg/1024px-Junction_2015.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+<div class="container text-center">
+  <div class="row align-items-center">
+    <div class="col">
+      <h2 style="color:#0275d8">Get Started</h2>
+      <p>A place for anyone just getting started on Tsugicloud just like you. Read our docs to get started.  </p>
+      <button type="button" class="btn btn-primary">Learn More</button>
+    </div>
+    <div class="col">
+    <h2 style="color:#292b2c">Customizable</h2>
+    <p>Experience TsugiCloud the way you want including UI/UX. After all you decide how your tools gonna look like. </p>
+    <button type="button" class="btn btn-secondary">Learn More</button>
+    </div>
+    <div class="col">
+    <h2 style="color:#5cb85c">User Protectable</h2>
+    <p>All your data will be ending up in your server. So there's no hassle or third party requirments which 
+      means no chance of breach at all.
+    </p>
+    <button type="button" class="btn btn-success">Learn More</button>
+    </div>
+    
+  </div>
+</div>
+<br>
+<div class="container text-center">
+  <div class="row align-items-center">
+    <div class="col">
+      <h2 style="color:#d9534f">Everyone is heard</h2>
+      <p>Everyone matters in our community since it's built from scratch because of open source developers like you </p>
+      <button type="button" class="btn btn-danger">Learn More</button>
+    </div>
+    <div class="col">
+    <h2 style="color:#f0ad4e">Unlimited Opportunity</h2>
+    <p>Since TsugiCloud is built for educators & like minded people, the opportunities it provide are endless </p>
+    <button type="button" class="btn btn-warning">Learn More</button>
+    </div>
+    <div class="col">
+    <h2 style="color:#5bc0de">LTI Compatibility</h2>
+    <p>TsugiCloud is LTI Compatible which means hassle free LTI intergration with your favorite LMS whether it's Blackboard or canvas. </p>
+    <button type="button" class="btn btn-info">Learn More</button>
+    </div>
+    
+  </div>
+</div>
+<br>
+<?php
+master::footer(); 
+?>
 
-namespace Grav;
-define('GRAV_PHP_MIN', '5.5.9');
-
-// Ensure vendor libraries exist
-$autoload = __DIR__ . '/vendor/autoload.php';
-if (!is_file($autoload)) {
-    die("Please run: <i>bin/grav install</i>");
-}
-
-if (PHP_SAPI == 'cli-server') {
-    if (!isset($_SERVER['PHP_CLI_ROUTER'])) {
-        die("PHP webserver requires a router to run Grav, please use: <pre>php -S {$_SERVER["SERVER_NAME"]}:{$_SERVER["SERVER_PORT"]} system/router.php</pre>");
-    }
-}
-
-use Grav\Common\Grav;
-use RocketTheme\Toolbox\Event\Event;
-
-if (version_compare($ver = PHP_VERSION, $req = GRAV_PHP_MIN, '<')) {
-    die(sprintf('You are running PHP %s, but Grav needs at least <strong>PHP %s</strong> to run.', $ver, $req));
-}
-
-// Register the auto-loader.
-$loader = require_once $autoload;
-
-// Set timezone to default, falls back to system if php.ini not set
-date_default_timezone_set(@date_default_timezone_get());
-
-// Set internal encoding if mbstring loaded
-if (!extension_loaded('mbstring')) {
-    die("'mbstring' extension is not loaded.  This is required for Grav to run correctly");
-}
-mb_internal_encoding('UTF-8');
-
-// Get the Grav instance
-$grav = Grav::instance(
-    array(
-        'loader' => $loader
-    )
-);
-
-// Process the page
-try {
-    $grav->process();
-} catch (\Exception $e) {
-    $grav->fireEvent('onFatalException', new Event(array('exception' => $e)));
-    throw $e;
-}
+</html>

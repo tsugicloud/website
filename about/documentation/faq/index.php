@@ -18,6 +18,3 @@ $content = file_get_contents('faq.md');
 echo $parsedown->text($content);
 ?>
 </div>    
-<div>
-<?php master::footer3(); ?>    
-</div>

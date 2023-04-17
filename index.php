@@ -86,8 +86,4 @@ setTimeout(() => { doLocalSearchPHPCrawl(); }, 5000);
   </div>
 </div>
 <br>
-<?php
-master::footer(); 
-?>
-
 </html>

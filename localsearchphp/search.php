@@ -18,7 +18,7 @@ $count = count($output->rows);
 
 ?>
 <head><title>Search - Tsugicloud </title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
 <script>
  $( function () {
@@ -54,8 +54,5 @@ foreach($output->rows as $item) {
     echo ("<p style='color:green'>$url</p>");
 }
 ?>
-</div>
-<div>
-<?php master :: footer1();  ?>  
 </div>
 

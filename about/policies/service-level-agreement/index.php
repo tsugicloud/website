@@ -5,6 +5,9 @@ master :: head();
 master :: navbar3();
 ?>
 </div>
+<head>
+  <title>Service Level - Tsugicloud</title>
+</head>
 <div style="background-color:#34A853;color:white;padding:50px;">   
 </div>
 <div style="margin-left:100px;margin-right:100px;">

@@ -6,6 +6,9 @@ master :: navbar3();
 
 
 ?>
+<head>
+  <title>Data Retention - Tsugicloud</title>
+</head>
 </div>
 <div style="background-color:#FBBC05;color:white;padding:50px;">   
 </div>

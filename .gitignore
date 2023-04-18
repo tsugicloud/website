@@ -7,3 +7,4 @@ config.php
 mod
 tsugi
 crawler.db
+spider.db

@@ -26,7 +26,7 @@ class MySpider {
 
     function __construct($start) {
         // Connect to SQLite database
-        $this->pdo = new PDO('sqlite:crawler.db');
+        $this->pdo = new PDO('sqlite:spider.db');
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Create tables if they don't exist
@@ -165,7 +165,9 @@ class MySpider {
                 }
             }
 
-            $html = preg_replace("/<script.*<\/script>/", '', $html);
+            $oldhtml = $html;
+            // $html = preg_replace("/<script.+<\/script>/m", '', $html);
+            $html = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $html);
 
             // Parse HTML
             $doc = new DOMDocument();
@@ -193,6 +195,8 @@ class MySpider {
             // Insert or update page in database
             $now = time();
             $this->insert_page($url, $title, $body, $hash, null, $now, $crawled);
+	    $base_url = parse_url($url, PHP_URL_SCHEME).'://'.parse_url($url, PHP_URL_HOST);
+	    $base_url = trim($url, '/');
 
             // Reload the document.
             @$doc->loadHTML($html);
@@ -200,6 +204,8 @@ class MySpider {
             $links = $doc->getElementsByTagName('a');
             foreach ($links as $link) {
                 $href = $link->getAttribute('href');
+		$href = self::remove_relative_path($href);
+		if ( strpos($href, '#') !== false ) continue;
                 if(strpos($href, $this->start) === 0) {
                     $abs_url = $href;
                 } else if(is_string($this->alternate) && strpos($href, $this->alternate) === 0) {
@@ -209,11 +215,7 @@ class MySpider {
                 } else if ( strpos($href, 'https://') === 0 ) {
                     continue;
                 } else {
-                    if(strpos($href, '/') === 0) {
-                        $abs_url = $this->start . $href;
-                    } else {
-                        $abs_url = $this->start . '/' . $href;
-                    }
+                    $abs_url = $base_url . '/' . $href;
                 }
 
                 if ( ! $this->page_exists($abs_url) ) {
@@ -269,6 +271,22 @@ class MySpider {
             echo "Retrieved Date: " . date('Y-m-d H:i:s', $row['retrieved_date']) . "\n";
             echo "\n";
         }
+    }
+
+    // From Tsugi\Util\U
+    public static function remove_relative_path($path) {
+        $pieces = explode('/', $path);
+        $new_pieces = array();
+        for($i=0; $i < count($pieces); $i++) {
+            if ($pieces[$i] == '.' ) continue;
+            if ($pieces[$i] == '..' ) {
+                array_pop($new_pieces);
+                continue;
+            }
+            $new_pieces[] = $pieces[$i];
+        }
+        $retval = implode("/",$new_pieces);
+        return $retval;
     }
 
 };

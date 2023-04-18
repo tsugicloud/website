@@ -2,7 +2,7 @@
 <?php 
 require_once '../../../master.php';
 master :: head();
-master :: navbar3();
+master :: navbar();
 
 ?>
 </div>

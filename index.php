@@ -13,7 +13,7 @@ function doLocalSearchPHPCrawl() {
     fetch('localsearchphp/crawl.php')
         .then(response => response.json())
         .then(result => {
-        setTimeout(() => { doCrawl(); }, 20000);
+        setTimeout(() => { doLocalSearchPHPCrawl(); }, 60000);
         })
     .catch(err => console.log(err))
 }

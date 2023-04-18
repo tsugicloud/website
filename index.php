@@ -42,6 +42,7 @@ setTimeout(() => { doLocalSearchPHPCrawl(); }, 5000);
   </button>
 </div>
 <br>
+<!--
 <div class="container text-center">
   <div class="row align-items-center">
     <div class="col">
@@ -85,5 +86,6 @@ setTimeout(() => { doLocalSearchPHPCrawl(); }, 5000);
     
   </div>
 </div>
+-->
 <br>
 </html>

@@ -44,9 +44,9 @@ body{
 	<body>
 <div id="main">
     	<div class="fof">
-        		<h1>Error 404</h1>
+        		<h1>TsugiCloud Error 404</h1>
 			<a href="<?= $APP_HOME ?>/search.php">
-        		<h2>You could try a search...</h2>
+        		<h2>Searching might help...</h2>
 	        </a>
     	</div>
 </div>

@@ -11,7 +11,7 @@ class MySpider {
     public int $successive = 30;
 
     // Tags where we don't want text
-    public array $stoptags = array('nav', 'footer');
+    public array $stoptags = array('nav', 'footer', 'script');
 
     public array $stopwords = array(
         'a', 'about', 'actually', 'almost', 'also', 'although', 'always', 'am', 'an', 'and',
@@ -164,6 +164,8 @@ class MySpider {
                     continue;
                 }
             }
+
+            $html = preg_replace("/<script.*<\/script>/", '', $html);
 
             // Parse HTML
             $doc = new DOMDocument();

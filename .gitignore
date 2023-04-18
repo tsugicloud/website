@@ -1,18 +1,5 @@
-# Grav Specific
-.sass-cache
-composer.lock
-tsugi/*
-mod/*
-cache/*
-assets/*
-logs/*
-images/*
-user/data/*
-
-# OS Generated
-.DS_Store*
-ehthumbs.db
-Icon?
-Thumbs.db
-*.swp
-
+/json-01
+/json-01.zip
+/json-02-chat
+/localsearchphp-main.zip
+/parsedown-1.7.4.zip

@@ -2,8 +2,24 @@
 require_once 'master.php';
 master :: head();
 master :: navbar();
+
 ?>
+<head>
+  <title>Tsugicloud</title>
+</head>
 <html>
+<script>
+function doLocalSearchPHPCrawl() {
+    fetch('localsearchphp/crawl.php')
+        .then(response => response.json())
+        .then(result => {
+        setTimeout(() => { doCrawl(); }, 20000);
+        })
+    .catch(err => console.log(err))
+}
+
+setTimeout(() => { doLocalSearchPHPCrawl(); }, 5000);
+</script>  
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -70,8 +86,4 @@ master :: navbar();
   </div>
 </div>
 <br>
-<?php
-master::footer(); 
-?>
-
 </html>

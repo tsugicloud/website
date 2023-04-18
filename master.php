@@ -2,6 +2,7 @@
 $APP_HOME = 'https://www.tsugicloud.org';
 class master {
     static function head() {
+      global $APP_HOME;
       echo <<< EOF
 <html>
 <head>
@@ -15,6 +16,7 @@ EOF
     }
 
     static function navbar() { 
+      global $APP_HOME;
       echo <<< EOF
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
         <div class="container-fluid">
@@ -60,6 +62,7 @@ EOF
     }
 
     static function navsearchpage() {
+      global $APP_HOME;
       echo <<< EOF
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
         <div class="container-fluid">
@@ -102,7 +105,8 @@ EOF
     }
 
     static function footer() {
-      echo <<< EOF
+      global $APP_HOME;
+ echo <<< EOF
       <div class="container">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
         <div class="col mb-3">
@@ -150,6 +154,7 @@ EOF
 EOF
 ;
     }
+}
 
 #
 #

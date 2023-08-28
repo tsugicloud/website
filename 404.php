@@ -1,5 +1,5 @@
 <html>
-<?php require_once "config.php"; ?>
+<?php require_once "tsugi/config.php"; ?>
 	<head>
 <style>
 *{
@@ -45,7 +45,7 @@ body{
 <div id="main">
     	<div class="fof">
         		<h1>TsugiCloud Error 404</h1>
-			<a href="<?= $APP_HOME ?>/search.php">
+			<a href="<?= $CFG->apphome ?>/search.php">
         		<h2>Searching might help...</h2>
 	        </a>
     	</div>

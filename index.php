@@ -39,7 +39,6 @@ master::navbar();
                         </div>
                         <h3 class="card-title h4">Cloud-Powered</h3>
                         <p class="card-text">Host your educational tools in the cloud with enterprise-grade reliability and scalability.</p>
-                        <a href="/tsugicloud/features/cloud" class="btn btn-link text-primary p-0">Learn more →</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +50,6 @@ master::navbar();
                         </div>
                         <h3 class="card-title h4">Secure & Private</h3>
                         <p class="card-text">Your data stays on your server. No third-party requirements, no data breaches.</p>
-                        <a href="/tsugicloud/features/security" class="btn btn-link text-primary p-0">Learn more →</a>
                     </div>
                 </div>
             </div>
@@ -62,8 +60,7 @@ master::navbar();
                             <i class="bi bi-puzzle"></i>
                         </div>
                         <h3 class="card-title h4">LTI Compatible</h3>
-                        <p class="card-text">Seamless integration with your favorite LMS, whether it's Blackboard or Canvas.</p>
-                        <a href="/tsugicloud/features/lti" class="btn btn-link text-primary p-0">Learn more →</a>
+                        <p class="card-text">Seamless integration with your favorite LMS, including Canvas, Sakai, and Brightspace.</p>
                     </div>
                 </div>
             </div>
@@ -77,8 +74,9 @@ master::navbar();
                 <h2 class="display-6 fw-bold mb-4">Join Our Community</h2>
                 <p class="lead mb-4">Be part of a growing community of educators and developers building the future of educational technology.</p>
                 <div class="d-flex gap-3">
-                    <a href="/tsugicloud/community/join" class="btn btn-primary btn-lg px-4">Join Now</a>
-                    <a href="/tsugicloud/community/projects" class="btn btn-outline-primary btn-lg px-4">View Projects</a>
+                    <a href="https://github.com/tsugiproject" target="_blank" class="btn btn-outline-primary btn-lg px-4">Installing Tsugi</a>
+                    <a href="https://github.com/tsugitools" target="_blank" class="btn btn-outline-primary btn-lg px-4">Tsugi Tools</a>
+                    <a href="https://www.tsugi.org" target="_blank" class="btn btn-primary btn-lg px-4">Developing Tools</a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -94,8 +92,8 @@ master::navbar();
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
                     <h2 class="display-6 fw-bold mb-4">Ready to Get Started?</h2>
-                    <p class="lead mb-4">Start building your educational tools today with Tsugicloud's powerful platform.</p>
-                    <a href="/tsugicloud/tsugi" class="btn btn-light btn-lg px-5">Start Building</a>
+                    <p class="lead mb-4">Start using free educational tools today with Tsugicloud.</p>
+                    <a href="/tsugicloud/tsugi" class="btn btn-light btn-lg px-5">Free Account</a>
                 </div>
             </div>
         </div>

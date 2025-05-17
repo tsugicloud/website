@@ -175,7 +175,7 @@ EOF
         <hr class="my-4">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
-                <p class="mb-0 text-muted">&copy; 2024 Tsugicloud. All rights reserved.</p>
+                <p class="mb-0 text-muted">&copy; 2025 Tsugicloud. All rights reserved.</p>
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <p class="mb-0 text-muted">Made with ❤️ for education</p>

@@ -27,7 +27,7 @@ more quickly once things seem to be working.
 Restarting the Crawl
 --------------------
 
-To restart the crawl, go into the `localsearchphp` folder and rewmove the `crawler.db`
+To restart the crawl, go into the `localsearchphp` folder and rewmove the `spider.db`
 file and start things back up using `test.php`. While testing, you might have to restart
 a few times to make suer your configuration is working.
 
@@ -44,7 +44,7 @@ Integrating Search into Your Web Site
 -------------------------------------
 
 To cause the crawl to happen, usually you put some JavaScript on the main page that waits a few seconds
-and then makes an AJAX request to the crawler endpoint.  Something like this in your top page should
+and then makes an AJAX request to the spider endpoint.  Something like this in your top page should
 do the trick.
 
     <script>
@@ -65,7 +65,7 @@ seconds it does another crawl.
 
 You could also make a shell script that you scheduled in `cron` to `curl` or `wget` the
 `crawl.php` URL from time to time.   Make suer that script runs as the correct user so the
-permissions on the `crawler.db` file is correct to the web server process can write to the
+permissions on the `spider.db` file is correct to the web server process can write to the
 file.
 
 You can build a UI that takes search terms, calls one of your pages that

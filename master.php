@@ -1,9 +1,5 @@
 <?php 
-if ( $_SERVER['SERVER_PORT'] ?? 80 == 80 ) {
-    $APP_HOME = '';
-} else {
-    $APP_HOME = '/tsugicloud';
-}
+$APP_HOME = '/tsugicloud/';
 class master {
     static function head() {
       global $APP_HOME;
@@ -17,7 +13,7 @@ class master {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="$APP_HOME/logo/tsugiLogo/png/miniCloud_blackBack.png">
+    <link rel="icon" type="image/x-icon" href="{$APP_HOME}logo/tsugiLogo/png/miniCloud_blackBack.png">
     <style>
         :root {
             --primary-color: #0d6efd;
@@ -79,8 +75,8 @@ EOF
       echo <<< EOF
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
     <div class="container">
-        <a class="navbar-brand" href="$APP_HOME">
-            <img src="$APP_HOME/logo/logo.png" height="30" alt="Tsugicloud Logo">
+        <a class="navbar-brand" href="{$APP_HOME}">
+            <img src="{$APP_HOME}logo/logo.png" height="30" alt="Tsugicloud Logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -89,26 +85,26 @@ EOF
         <div class="collapse navbar-collapse" id="navbarMain">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="$APP_HOME">Home</a>
+                    <a class="nav-link active" href="{$APP_HOME}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="$APP_HOME/tsugi">App Store</a>
+                    <a class="nav-link" href="{$APP_HOME}tsugi">App Store</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Documentation
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="$APP_HOME/about/documentation/howto/">How To</a></li>
-                        <li><a class="dropdown-item" href="$APP_HOME/about/documentation/faq/">FAQ</a></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/documentation/howto/">How To</a></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/documentation/faq/">FAQ</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="$APP_HOME/about/policies/privacy">Privacy Policy</a></li>
-                        <li><a class="dropdown-item" href="$APP_HOME/about/policies/data-retention">Data Retention</a></li>
-                        <li><a class="dropdown-item" href="$APP_HOME/about/policies/service-level-agreement">Service Level</a></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/policies/privacy">Privacy Policy</a></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/policies/data-retention">Data Retention</a></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/policies/service-level-agreement">Service Level</a></li>
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex" role="search" action="$APP_HOME/search.php">
+            <form class="d-flex" role="search" action="{$APP_HOME}search.php">
                 <div class="input-group">
                     <input class="form-control" type="search" name="query" placeholder="Search..." aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">
@@ -142,37 +138,37 @@ EOF
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="$APP_HOME" class="text-muted text-decoration-none">Home</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/tsugi" class="text-muted text-decoration-none">App Store</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/about/documentation" class="text-muted text-decoration-none">Documentation</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/community" class="text-muted text-decoration-none">Community</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}" class="text-muted text-decoration-none">Home</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}tsugi" class="text-muted text-decoration-none">App Store</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/documentation" class="text-muted text-decoration-none">Documentation</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}community" class="text-muted text-decoration-none">Community</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Resources</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="$APP_HOME/getting-started" class="text-muted text-decoration-none">Getting Started</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/api-docs" class="text-muted text-decoration-none">API Docs</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/tutorials" class="text-muted text-decoration-none">Tutorials</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/blog" class="text-muted text-decoration-none">Blog</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}getting-started" class="text-muted text-decoration-none">Getting Started</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}api-docs" class="text-muted text-decoration-none">API Docs</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}tutorials" class="text-muted text-decoration-none">Tutorials</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}blog" class="text-muted text-decoration-none">Blog</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Legal</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="$APP_HOME/about/policies/privacy" class="text-muted text-decoration-none">Privacy</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/about/policies/terms" class="text-muted text-decoration-none">Terms</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/about/policies/security" class="text-muted text-decoration-none">Security</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/about/policies/license" class="text-muted text-decoration-none">License</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/privacy" class="text-muted text-decoration-none">Privacy</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/terms" class="text-muted text-decoration-none">Terms</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/security" class="text-muted text-decoration-none">Security</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/license" class="text-muted text-decoration-none">License</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Support</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="$APP_HOME/help" class="text-muted text-decoration-none">Help Center</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/contact" class="text-muted text-decoration-none">Contact</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/status" class="text-muted text-decoration-none">Status</a></li>
-                    <li class="mb-2"><a href="$APP_HOME/about/documentation/faq" class="text-muted text-decoration-none">FAQ</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}help" class="text-muted text-decoration-none">Help Center</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}contact" class="text-muted text-decoration-none">Contact</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}status" class="text-muted text-decoration-none">Status</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/documentation/faq" class="text-muted text-decoration-none">FAQ</a></li>
                 </ul>
             </div>
         </div>

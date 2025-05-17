@@ -1,5 +1,9 @@
 <?php 
-$APP_HOME = '/tsugicloud';
+if ( $_SERVER['SERVER_PORT'] ?? 80 == 80 ) {
+    $APP_HOME = '';
+} else {
+    $APP_HOME = '/tsugicloud';
+}
 class master {
     static function head() {
       global $APP_HOME;

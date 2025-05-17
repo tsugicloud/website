@@ -14,8 +14,8 @@ master::navbar();
                             <h1 class="display-4 fw-bold mb-4">Welcome to Tsugicloud</h1>
                             <p class="lead mb-4">Your all-in-one platform for educational tools and LTI integration. Build, deploy, and scale your learning applications with ease.</p>
                             <div class="d-flex gap-3">
-                                <a href="/tsugicloud/tsugi" class="btn btn-light btn-lg px-4">Get Started</a>
-                                <a href="/tsugicloud/about/documentation/howto" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+                                <a href="$APP_HOME/tsugi" class="btn btn-light btn-lg px-4">Get Started</a>
+                                <a href="$APP_HOME/about/documentation/howto" class="btn btn-outline-light btn-lg px-4">Learn More</a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-none d-lg-block">

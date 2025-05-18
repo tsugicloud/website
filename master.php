@@ -88,7 +88,7 @@ EOF
                     <a class="nav-link active" href="{$APP_HOME}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{$APP_HOME}tsugi">App Store</a>
+                    <a class="nav-link" href="{$APP_HOME}tsugi/store">App Store</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -139,8 +139,9 @@ EOF
                 <h5 class="text-white mb-4">Quick Links</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2"><a href="{$APP_HOME}" class="text-light text-decoration-none">Home</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}tsugi" class="text-light text-decoration-none">App Store</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}tsugi/store" class="text-light text-decoration-none">App Store</a></li>
                     <li class="mb-2"><a href="https://groups.google.com/a/apereo.org/g/tsugi-dev" target="_blank"class="text-light text-decoration-none">Community</a></li>
+                    <li class="mb-2"><a href="https://www.tsugi.org/lti-test" target="_blank"class="text-light text-decoration-none">LTI 1.1 Test Tool</a></li>
                 </ul>
             </div>
 

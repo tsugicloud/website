@@ -24,6 +24,77 @@ class MySpider {
         'you', 'your'
     );
 
+    // Porter Stemmer implementation
+    private function stem($word) {
+        // Step 1a
+        if (substr($word, -1) == 's') {
+            if (substr($word, -4) == 'sses') {
+                $word = substr($word, 0, -2);
+            } elseif (substr($word, -3) == 'ies') {
+                $word = substr($word, 0, -2);
+            } elseif (substr($word, -2) == 'ss') {
+                $word = $word;
+            } else {
+                $word = substr($word, 0, -1);
+            }
+        }
+
+        // Step 1b
+        if (substr($word, -3) == 'eed') {
+            if ($this->m($word) > 0) {
+                $word = substr($word, 0, -1);
+            }
+        } elseif (substr($word, -2) == 'ed') {
+            if ($this->containsVowel($word, 0, -2)) {
+                $word = substr($word, 0, -2);
+                if (substr($word, -2) == 'at' || substr($word, -2) == 'bl' || substr($word, -2) == 'iz') {
+                    $word .= 'e';
+                }
+            }
+        } elseif (substr($word, -3) == 'ing') {
+            if ($this->containsVowel($word, 0, -3)) {
+                $word = substr($word, 0, -3);
+                if (substr($word, -2) == 'at' || substr($word, -2) == 'bl' || substr($word, -2) == 'iz') {
+                    $word .= 'e';
+                }
+            }
+        }
+
+        // Step 1c
+        if (substr($word, -1) == 'y' && $this->containsVowel($word, 0, -1)) {
+            $word = substr($word, 0, -1) . 'i';
+        }
+
+        return $word;
+    }
+
+    private function m($word) {
+        $count = 0;
+        $pattern = '/[^aeiou]+[aeiou]+/';
+        $word = ' ' . $word . ' ';
+        $word = preg_replace('/[^aeiou]+/', 'C', $word);
+        $word = preg_replace('/[aeiou]+/', 'V', $word);
+        $word = trim($word);
+        $parts = explode('V', $word);
+        foreach ($parts as $part) {
+            if (strlen($part) > 0) {
+                $count++;
+            }
+        }
+        return $count;
+    }
+
+    private function containsVowel($word, $start, $end) {
+        $vowels = array('a', 'e', 'i', 'o', 'u');
+        $word = substr($word, $start, $end - $start);
+        foreach ($vowels as $vowel) {
+            if (strpos($word, $vowel) !== false) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     function __construct($start) {
         // Connect to SQLite database
         $this->pdo = new PDO('sqlite:spider.db');
@@ -58,6 +129,9 @@ class MySpider {
                 // Skip stopwords
                 if ( in_array($piece, $this->stopwords) ) continue;
                 
+                // Stem the word
+                $piece = $this->stem($piece);
+                
                 // Skip if word already exists
                 if ( in_array($piece, $words) ) continue;
                 
@@ -80,7 +154,7 @@ class MySpider {
             }
             if ( strlen($body) > 200 ) $body = substr($body, 0, 200) . " ...";
 
-	    $retrieved_date = time();
+            $retrieved_date = time();
         }
 
         $sql = 'INSERT OR REPLACE INTO pages (url, title, body, words, hash, code, retrieved_date) 
@@ -286,8 +360,10 @@ class MySpider {
             $where = '';
             foreach($words as $word) {
                 if ( strlen($where) > 0 ) $where .= ' OR ';
+                // Stem the search word
+                $stemmed_word = $this->stem($word);
                 // More flexible matching - word can be at start, middle, or end
-                $where .= "(words LIKE '% " . $word . " %' OR words LIKE '" . $word . " %' OR words LIKE '% " . $word . "')";
+                $where .= "(words LIKE '% " . $stemmed_word . " %' OR words LIKE '" . $stemmed_word . " %' OR words LIKE '% " . $stemmed_word . "')";
             }
             $where = ' AND  (' . $where . ') ';
         }

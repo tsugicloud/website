@@ -30,7 +30,7 @@ class MySpider {
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Create tables if they don't exist
-        $this->pdo->exec('CREATE TABLE IF NOT EXISTS pages (id INTEGER PRIMARY KEY, url TEXT UNIQUE, title TEXT, body TEXT, words TEXT, hash TEXT UNIQUE, code INTEGER, retrieved_date INTEGER)');
+        $this->pdo->exec('CREATE TABLE IF NOT EXISTS pages (id INTEGER PRIMARY KEY, url TEXT UNIQUE, title TEXT, body TEXT, words TEXT, hash TEXT, code INTEGER, retrieved_date INTEGER)');
         $this->pdo->exec('CREATE INDEX IF NOT EXISTS idx_pages_retrieved_date ON pages (retrieved_date)');
         $this->pdo->exec('CREATE INDEX IF NOT EXISTS idx_pages_url ON pages (url)');
 
@@ -79,13 +79,15 @@ class MySpider {
                 $words = null;
             }
             if ( strlen($body) > 200 ) $body = substr($body, 0, 200) . " ...";
+
+	    $retrieved_date = time();
         }
 
         $sql = 'INSERT OR REPLACE INTO pages (url, title, body, words, hash, code, retrieved_date) 
                          VALUES (:url,  :title, :body, :words, :hash, :code, :date)
                 ON CONFLICT (url) DO UPDATE SET 
                     title=excluded.title, body=excluded.body, words=excluded.words,
-                    hash=excluded.hash, code=excluded.code, retrieved_date=excluded.retrieved_date';
+                    hash=excluded.hash, code=excluded.code, retrieved_date=:date';
 
         $stmt = $this->pdo->prepare($sql);
 
@@ -228,7 +230,9 @@ class MySpider {
             if (isset($parsed_url['port'])) {
                 $base_url .= ':' . $parsed_url['port'];
             }
-            $base_path = dirname($parsed_url['path']);
+            $base_path = $parsed_url['path'] ?? '/';
+	    $base_name = basename($base_path);
+	    if ( str_contains($base_name, ".") ) $base_path = dirname($base_path);
 
             // Reload the document.
             @$doc->loadHTML($html);
@@ -237,6 +241,7 @@ class MySpider {
             foreach ($links as $link) {
                 $href = $link->getAttribute('href');
                 if ( strpos($href, '#') !== false ) continue;
+                if (str_ends_with($href, '.json') || str_ends_with($href, '.xml') ) continue;  // Skip data urls
                 
                 // Handle different types of URLs
                 if (strpos($href, $this->start) === 0) {

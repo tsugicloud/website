@@ -20,12 +20,13 @@ echo "<p>Time Elapsed: " . ($end_time - $start_time) . " seconds</p>";
 if (isset($result["crawled"])) {
     echo "<h3>Pages Crawled:</h3>";
     echo "<table border='1' cellpadding='5'>";
-    echo "<tr><th>URL</th><th>Status</th><th>Title</th><th>Words</th></tr>";
+    echo "<tr><th>URL</th><th>Status</th><th>Date</th><th>Title</th><th>Words</th></tr>";
     
     foreach ($result["crawled"] as $page) {
         echo "<tr>";
         echo "<td>" . htmlspecialchars($page["values"][":url"]) . "</td>";
         echo "<td>" . htmlspecialchars($page["status"]) . "</td>";
+        echo "<td>" . htmlspecialchars($page["values"][":date"]??'null') . "</td>";
         
         // Show title if available
         $title = isset($page["values"][":title"]) ? $page["values"][":title"] : "N/A";

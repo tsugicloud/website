@@ -30,7 +30,7 @@ class MySpider {
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Create tables if they don't exist
-        $this->pdo->exec('CREATE TABLE IF NOT EXISTS pages (id INTEGER PRIMARY KEY, url TEXT UNIQUE, title TEXT, body TEXT, words TEXT, hash TEXT UNIQUE, code INTEGER, retrieved_date INTEGER)');
+        $this->pdo->exec('CREATE TABLE IF NOT EXISTS pages (id INTEGER PRIMARY KEY, url TEXT UNIQUE, title TEXT, body TEXT, words TEXT, hash TEXT, code INTEGER, retrieved_date INTEGER)');
         $this->pdo->exec('CREATE INDEX IF NOT EXISTS idx_pages_retrieved_date ON pages (retrieved_date)');
         $this->pdo->exec('CREATE INDEX IF NOT EXISTS idx_pages_url ON pages (url)');
 
@@ -44,29 +44,50 @@ class MySpider {
     public function insert_page($url, $title, $body, $hash, $error, $retrieved_date, &$crawled=null) {
         $words = null;
         if ( is_string($body) && strlen($body) > 0 ) {
-            $string = strtolower(preg_replace("/[^A-Za-z0-9 ]/", '', $body));
+            // Clean and normalize the text
+            $string = strtolower(preg_replace("/[^A-Za-z0-9 ]/", ' ', $body));
+            $string = preg_replace('/\s+/', ' ', $string); // Normalize spaces
+            $string = trim($string);
+            
             $words = array();
             $pieces = explode(' ', $string);
             foreach($pieces as $piece) {
+                // Skip short words
                 if ( strlen($piece) < 3 ) continue;
+                
+                // Skip stopwords
                 if ( in_array($piece, $this->stopwords) ) continue;
+                
+                // Skip if word already exists
                 if ( in_array($piece, $words) ) continue;
+                
+                // Skip numeric values and CSS units
+                if ( preg_match('/^\d+(px|rem|em|%|vh|vw|pt|cm|mm|in|ex|ch|vmin|vmax)?$/', $piece) ) continue;
+                
+                // Skip hex colors
+                if ( preg_match('/^[0-9a-f]{3,6}$/', $piece) ) continue;
+                
+                // Skip pure numbers
+                if ( is_numeric($piece) ) continue;
+                
                 array_push($words, $piece);
             }
             if ( count($words) > 1 ) {
                 sort($words);
-                $words = ' ' . implode(' ', $words) . ' ';
+                $words = ' ' . implode(' ', $words) . ' '; // Ensure spaces at start and end
             } else {
                 $words = null;
             }
             if ( strlen($body) > 200 ) $body = substr($body, 0, 200) . " ...";
+
+	    $retrieved_date = time();
         }
 
         $sql = 'INSERT OR REPLACE INTO pages (url, title, body, words, hash, code, retrieved_date) 
                          VALUES (:url,  :title, :body, :words, :hash, :code, :date)
                 ON CONFLICT (url) DO UPDATE SET 
                     title=excluded.title, body=excluded.body, words=excluded.words,
-                    hash=excluded.hash, code=excluded.code, retrieved_date=excluded.retrieved_date';
+                    hash=excluded.hash, code=excluded.code, retrieved_date=:date';
 
         $stmt = $this->pdo->prepare($sql);
 
@@ -84,25 +105,13 @@ class MySpider {
                 $crawl["status"] = "Page insert/update";
             }
             if ( is_array($crawled) ) array_push($crawled, $crawl);
-
-        // If we have a hash conflict, we have duplicat content at multiple URLs
         } catch(Exception $e) {
-
-            $stmt = $this->pdo->prepare($sql);
-            $values[':hash'] = null;
-            $stmt->execute($values);
-
             $crawl = array();
             $crawl["values"] = $values;
-            $crawl["status"] = "Duplicate page insert/update";
-            if ( is_array($crawled) ) array_push($crawled, $crawl);
-        } catch(Exception $e) {
-            $crawl = array($values);
             $crawl["status"] = "Insert fail: " . $e;
             $crawl["sql"] = $sql;
             if ( is_array($crawled) ) array_push($crawled, $crawl);
         }
-
     }
 
     // Function to check whether a page already exists in the database
@@ -166,8 +175,13 @@ class MySpider {
             }
 
             $oldhtml = $html;
-            // $html = preg_replace("/<script.+<\/script>/m", '', $html);
+            // Remove script tags
             $html = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $html);
+            // Remove style tags and their contents
+            $html = preg_replace('#<style(.*?)>(.*?)</style>#is', '', $html);
+            // Remove inline styles
+            $html = preg_replace('/style\s*=\s*"[^"]*"/i', '', $html);
+            $html = preg_replace('/style\s*=\s*\'[^\']*\'/i', '', $html);
 
             // Parse HTML
             $doc = new DOMDocument();
@@ -182,7 +196,21 @@ class MySpider {
                 }
             }
 
-            $body = $doc->getElementsByTagName('body')->item(0)->textContent;
+            // Get text content, excluding style and script elements
+            $body = '';
+            $body_elements = $doc->getElementsByTagName('body')->item(0)->childNodes;
+            foreach ($body_elements as $element) {
+                if ($element->nodeType === XML_TEXT_NODE) {
+                    $body .= $element->textContent . ' ';
+                } else if ($element->nodeType === XML_ELEMENT_NODE) {
+                    // Skip style and script elements
+                    if (strtolower($element->nodeName) === 'style' || 
+                        strtolower($element->nodeName) === 'script') {
+                        continue;
+                    }
+                    $body .= $element->textContent . ' ';
+                }
+            }
 
             // Remove multiple spaces and blank lines from the title and body
             $title = preg_replace('/\s+/', ' ', $title);
@@ -195,8 +223,16 @@ class MySpider {
             // Insert or update page in database
             $now = time();
             $this->insert_page($url, $title, $body, $hash, null, $now, $crawled);
-	    $base_url = parse_url($url, PHP_URL_SCHEME).'://'.parse_url($url, PHP_URL_HOST);
-	    $base_url = trim($url, '/');
+            
+            // Get base URL properly
+            $parsed_url = parse_url($url);
+            $base_url = $parsed_url['scheme'] . '://' . $parsed_url['host'];
+            if (isset($parsed_url['port'])) {
+                $base_url .= ':' . $parsed_url['port'];
+            }
+            $base_path = $parsed_url['path'] ?? '/';
+	    $base_name = basename($base_path);
+	    if ( str_contains($base_name, ".") ) $base_path = dirname($base_path);
 
             // Reload the document.
             @$doc->loadHTML($html);
@@ -204,21 +240,32 @@ class MySpider {
             $links = $doc->getElementsByTagName('a');
             foreach ($links as $link) {
                 $href = $link->getAttribute('href');
-		$href = self::remove_relative_path($href);
-		if ( strpos($href, '#') !== false ) continue;
-                if(strpos($href, $this->start) === 0) {
+                if ( strpos($href, '#') !== false ) continue;
+                if (str_ends_with($href, '.json') || str_ends_with($href, '.xml') ) continue;  // Skip data urls
+                
+                // Handle different types of URLs
+                if (strpos($href, $this->start) === 0) {
                     $abs_url = $href;
-                } else if(is_string($this->alternate) && strpos($href, $this->alternate) === 0) {
+                } else if (is_string($this->alternate) && strpos($href, $this->alternate) === 0) {
                     $abs_url = str_replace($this->alternate, $this->start, $href);
-                } else if ( strpos($href, 'http://') === 0 ) {
-                    continue;
-                } else if ( strpos($href, 'https://') === 0 ) {
-                    continue;
+                } else if (strpos($href, 'http://') === 0 || strpos($href, 'https://') === 0) {
+                    continue; // Skip external URLs
                 } else {
-                    $abs_url = $base_url . '/' . $href;
+                    // Handle relative URLs
+                    if (strpos($href, '/') === 0) {
+                        // Absolute path from domain root
+                        $abs_url = $base_url . $href;
+                    } else {
+                        // Relative path
+                        $abs_url = $base_url . $base_path . '/' . $href;
+                    }
                 }
 
-                if ( ! $this->page_exists($abs_url) ) {
+                // Clean up the URL
+                $abs_url = preg_replace('#([^:])//+#', '$1/', $abs_url); // Remove multiple slashes
+                $abs_url = rtrim($abs_url, '/'); // Remove trailing slash
+
+                if (!$this->page_exists($abs_url)) {
                     $this->insert_page($abs_url, null, null, null, null, null, $crawled);
                 }
             }
@@ -239,7 +286,8 @@ class MySpider {
             $where = '';
             foreach($words as $word) {
                 if ( strlen($where) > 0 ) $where .= ' OR ';
-                $where .= "words LIKE '% " . $word . " %'";
+                // More flexible matching - word can be at start, middle, or end
+                $where .= "(words LIKE '% " . $word . " %' OR words LIKE '" . $word . " %' OR words LIKE '% " . $word . "')";
             }
             $where = ' AND  (' . $where . ') ';
         }
@@ -247,8 +295,12 @@ class MySpider {
             retrieved_date IS NOT NULL ".$where." ORDER BY id LIMIT $count OFFSET $start";
 
         $stmt = $this->pdo->query($sql);
-
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        // Debug output
+        error_log("Search SQL: " . $sql);
+        error_log("Found rows: " . count($rows));
+        
         $retval = array();
         $retval["rows"] = $rows;
         $retval["sql"] = $sql;

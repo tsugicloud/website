@@ -1,16 +1,71 @@
 <?php 
-$APP_HOME = 'https://www.tsugicloud.org';
+$APP_HOME = ($_SERVER['SERVER_PORT'] ?? 8888 ) == 8888 ? "/tsugicloud/" : '/';
 class master {
     static function head() {
       global $APP_HOME;
       echo <<< EOF
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-      <link rel="icon" type="image/x-icon" href="$APP_HOME/logo/tsugiLogo/png/miniCloud_blackBack.png">
-      </head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsugicloud - Educational Tools Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="{$APP_HOME}logo/tsugiLogo/png/miniCloud_blackBack.png">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #0a58ca;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(33, 37, 41, 0.95) !important;
+        }
+        .navbar-brand img {
+            transition: transform 0.3s ease;
+        }
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+    </style>
+</head>
 EOF
 ;
     }
@@ -18,139 +73,104 @@ EOF
     static function navbar() { 
       global $APP_HOME;
       echo <<< EOF
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="$APP_HOME"><img src ="$APP_HOME/logo/logo.png" height="30px"/></a>
-          <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+    <div class="container">
+        <a class="navbar-brand" href="{$APP_HOME}">
+            <img src="{$APP_HOME}logo/logo.png" height="30" alt="Tsugicloud Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="$APP_HOME">Home</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="$APP_HOME/tsugi" target="_Blank">App Store</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" >Docs</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/documentation/howto/">How To</a></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/documentation/faq/">FAQ</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item">Policy</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/policies/privacy">Privacy</a></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/policies/data-retention">Data Retention</a></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/policies/service-level-agreement">Service Level</a></li>
-                </ul>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{$APP_HOME}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{$APP_HOME}tsugi">App Store</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Documentation
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/documentation/howto/">How To</a></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/documentation/faq/">FAQ</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/policies/privacy">Privacy Policy</a></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/policies/data-retention">Data Retention</a></li>
+                        <li><a class="dropdown-item" href="{$APP_HOME}about/policies/service-level-agreement">Service Level</a></li>
+                    </ul>
+                </li>
             </ul>
-            <form method="GET" role="search" class="d-flex" action="$APP_HOME/search.php">
-              <input class="form-control me-2" type="text" name="query" placeholder="Search" aria-label="Search">
-              <input class="btn btn-outline-danger" type="submit" value="Search" >
+            <form class="d-flex" role="search" action="{$APP_HOME}search.php">
+                <div class="input-group">
+                    <input class="form-control" type="search" name="query" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
             </form>
-          </div>
         </div>
-      </nav>
-
+    </div>
+</nav>
+<div style="height: 76px;"></div>
 EOF
 ;
-    }
-
-    static function navsearchpage() {
-      global $APP_HOME;
-      echo <<< EOF
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="$APP_HOME"><img src ="$APP_HOME/logo/logo.png" height="30px"/></a>
-          <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="$APP_HOME">Home</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="$APP_HOME/tsugi" target="_Blank">App Store</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" >Docs</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/documentation/howto/">How To</a></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/documentation/faq/">FAQ</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item">Policy</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/policies/privacy">Privacy</a></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/policies/data-retention">Data Retention</a></li>
-                  <li><a class="dropdown-item" href="$APP_HOME/about/policies/service-level-agreement">Service Level</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-EOF
-;
-
     }
 
     static function footer() {
       global $APP_HOME;
- echo <<< EOF
-      <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-        <div class="col mb-3">
-          <p class="text-muted">&copy;Tsugicloud 2023</p>
+      echo <<< EOF
+<footer class="bg-dark text-light py-5 mt-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <h5 class="text-white mb-4">About Tsugicloud</h5>
+                <p class="text-light">Empowering educators use free and open-source tools using LTI integration.</p>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="#" class="text-light"><i class="bi bi-github fs-5"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-twitter fs-5"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-linkedin fs-5"></i></a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h5 class="text-white mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="{$APP_HOME}" class="text-light text-decoration-none">Home</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}tsugi" class="text-light text-decoration-none">App Store</a></li>
+                    <li class="mb-2"><a href="https://groups.google.com/a/apereo.org/g/tsugi-dev" target="_blank"class="text-light text-decoration-none">Community</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h5 class="text-white mb-4">Legal</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/privacy" class="text-light text-decoration-none">Privacy</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/data-retention" class="text-light text-decoration-none">Data Retention</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/service-level-agreement" class="text-light text-decoration-none">Service Level</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h5 class="text-white mb-4">Support</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="https://status.tsugi.org" target="_blank" class="text-light text-decoration-none">Status</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/documentation/faq" class="text-light text-decoration-none">FAQ</a></li>
+                </ul>
+            </div>
         </div>
-    
-        <div class="col mb-3">
-    
+        <hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0 text-light">&copy; 2025 Tsugicloud. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0 text-light">Made with ❤️ for education</p>
+            </div>
         </div>
-    
-        <div class="col mb-3">
-          <h5>Links</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Community</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-          </ul>
-        </div>
-    
-        <div class="col mb-3">
-          <h5>Guides</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Getting Started</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">LTI Integration</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cloud</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Developers</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">App Store</a></li>
-          </ul>
-        </div>
-    
-        <div class="col mb-3">
-          <h5>Community</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Blog</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Discussions</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Users</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Testimonial</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contribute</a></li>
-          </ul>
-        </div>
-      </footer>
     </div>
+</footer>
 EOF
 ;
     }

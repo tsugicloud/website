@@ -128,57 +128,57 @@ EOF
         <div class="row g-4">
             <div class="col-lg-4">
                 <h5 class="text-white mb-4">About Tsugicloud</h5>
-                <p class="text-muted">Empowering educators and developers to build the future of educational technology through open-source tools and LTI integration.</p>
+                <p class="text-light">Empowering educators use free and open-source tools using LTI integration.</p>
                 <div class="d-flex gap-3 mt-4">
-                    <a href="#" class="text-muted"><i class="bi bi-github fs-5"></i></a>
-                    <a href="#" class="text-muted"><i class="bi bi-twitter fs-5"></i></a>
-                    <a href="#" class="text-muted"><i class="bi bi-linkedin fs-5"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-github fs-5"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-twitter fs-5"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-linkedin fs-5"></i></a>
                 </div>
             </div>
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="{$APP_HOME}" class="text-muted text-decoration-none">Home</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}tsugi" class="text-muted text-decoration-none">App Store</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/documentation" class="text-muted text-decoration-none">Documentation</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}community" class="text-muted text-decoration-none">Community</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}" class="text-light text-decoration-none">Home</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}tsugi" class="text-light text-decoration-none">App Store</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/documentation" class="text-light text-decoration-none">Documentation</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}community" class="text-light text-decoration-none">Community</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Resources</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="{$APP_HOME}getting-started" class="text-muted text-decoration-none">Getting Started</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}api-docs" class="text-muted text-decoration-none">API Docs</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}tutorials" class="text-muted text-decoration-none">Tutorials</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}blog" class="text-muted text-decoration-none">Blog</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}getting-started" class="text-light text-decoration-none">Getting Started</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}api-docs" class="text-light text-decoration-none">API Docs</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}tutorials" class="text-light text-decoration-none">Tutorials</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}blog" class="text-light text-decoration-none">Blog</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Legal</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="{$APP_HOME}about/policies/privacy" class="text-muted text-decoration-none">Privacy</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/policies/terms" class="text-muted text-decoration-none">Terms</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/policies/security" class="text-muted text-decoration-none">Security</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/policies/license" class="text-muted text-decoration-none">License</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/privacy" class="text-light text-decoration-none">Privacy</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/terms" class="text-light text-decoration-none">Terms</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/security" class="text-light text-decoration-none">Security</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/license" class="text-light text-decoration-none">License</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Support</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="{$APP_HOME}help" class="text-muted text-decoration-none">Help Center</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}contact" class="text-muted text-decoration-none">Contact</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}status" class="text-muted text-decoration-none">Status</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/documentation/faq" class="text-muted text-decoration-none">FAQ</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}help" class="text-light text-decoration-none">Help Center</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}contact" class="text-light text-decoration-none">Contact</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}status" class="text-light text-decoration-none">Status</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/documentation/faq" class="text-light text-decoration-none">FAQ</a></li>
                 </ul>
             </div>
         </div>
         <hr class="my-4">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
-                <p class="mb-0 text-muted">&copy; 2025 Tsugicloud. All rights reserved.</p>
+                <p class="mb-0 text-light">&copy; 2025 Tsugicloud. All rights reserved.</p>
             </div>
             <div class="col-md-6 text-center text-md-end">
-                <p class="mb-0 text-muted">Made with ❤️ for education</p>
+                <p class="mb-0 text-light">Made with ❤️ for education</p>
             </div>
         </div>
     </div>

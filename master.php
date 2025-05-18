@@ -140,34 +140,22 @@ EOF
                 <ul class="list-unstyled">
                     <li class="mb-2"><a href="{$APP_HOME}" class="text-light text-decoration-none">Home</a></li>
                     <li class="mb-2"><a href="{$APP_HOME}tsugi" class="text-light text-decoration-none">App Store</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/documentation" class="text-light text-decoration-none">Documentation</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}community" class="text-light text-decoration-none">Community</a></li>
+                    <li class="mb-2"><a href="https://groups.google.com/a/apereo.org/g/tsugi-dev" target="_blank"class="text-light text-decoration-none">Community</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-lg-2">
-                <h5 class="text-white mb-4">Resources</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="{$APP_HOME}getting-started" class="text-light text-decoration-none">Getting Started</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}api-docs" class="text-light text-decoration-none">API Docs</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}tutorials" class="text-light text-decoration-none">Tutorials</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}blog" class="text-light text-decoration-none">Blog</a></li>
-                </ul>
-            </div>
+
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Legal</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2"><a href="{$APP_HOME}about/policies/privacy" class="text-light text-decoration-none">Privacy</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/policies/terms" class="text-light text-decoration-none">Terms</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/policies/security" class="text-light text-decoration-none">Security</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}about/policies/license" class="text-light text-decoration-none">License</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/data-retention" class="text-light text-decoration-none">Data Retention</a></li>
+                    <li class="mb-2"><a href="{$APP_HOME}about/policies/service-level-agreement" class="text-light text-decoration-none">Service Level</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2">
                 <h5 class="text-white mb-4">Support</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="{$APP_HOME}help" class="text-light text-decoration-none">Help Center</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}contact" class="text-light text-decoration-none">Contact</a></li>
-                    <li class="mb-2"><a href="{$APP_HOME}status" class="text-light text-decoration-none">Status</a></li>
+                    <li class="mb-2"><a href="https://status.tsugi.org" target="_blank" class="text-light text-decoration-none">Status</a></li>
                     <li class="mb-2"><a href="{$APP_HOME}about/documentation/faq" class="text-light text-decoration-none">FAQ</a></li>
                 </ul>
             </div>
